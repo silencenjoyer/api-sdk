@@ -1,0 +1,53 @@
+{
+  "name": "silencenjoyer/api-sdk",
+  "type": "library",
+  "description": "A lightweight PHP SDK for creating API integrations.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrew Gebrych",
+      "email": "an_gebrich@outlook.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Silencenjoyer\\ApiSdk\\": "src"
+    }
+  },
+  "suggest": {
+    "nyholm/psr7": "Provides PSR-7 and PSR-17 implementations",
+    "guzzlehttp/guzzle": "Provides PSR-18 HTTP client",
+    "symfony/http-client": "Provides PSR-18 HTTP client",
+    "http-interop/http-factory-guzzle": "Provides PSR-17 for Guzzle"
+  },
+  "require": {
+    "php": "^7.4.0|^8.0.0",
+    "psr/http-message": "^1.1|^2.0",
+    "psr/http-client": "^1.0.0",
+    "psr/http-factory": "^1.0.0",
+    "psr/log": "~1.1.0",
+    "silencenjoyer/rate-limiter": "^3.0.0",
+    "php-http/discovery": "^1.0",
+    "ext-json": "*"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4.0"
+    },
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "*",
+    "symfony/var-dumper": "^5.0",
+    "phpunit/phpunit": "^9.0",
+    "nyholm/psr7": "^1.8.0",
+    "symfony/http-client": "^5.0"
+  },
+  "scripts": {
+    "test": "php vendor/bin/phpunit",
+    "phpstan": "php vendor/bin/phpstan"
+  }
+}
