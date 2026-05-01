@@ -175,7 +175,7 @@ abstract class AbstractApi implements ApiInterface, CommandFactoryInterface, Has
      *
      * @return static
      */
-    final public static function build(
+    public static function build(
         ?ClientInterface $client = null,
         ?RequestFactoryInterface $requestFactory = null,
         ?StreamFactoryInterface $streamFactory = null
