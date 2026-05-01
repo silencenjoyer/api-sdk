@@ -4,7 +4,7 @@ A lightweight PHP framework for building typed HTTP API integrations.
 
 [![Tests](https://github.com/silencenjoyer/api-sdk/actions/workflows/tests.yml/badge.svg)](https://github.com/silencenjoyer/api-sdk/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/silencenjoyer/api-sdk/branch/main/graph/badge.svg)](https://codecov.io/gh/silencenjoyer/api-sdk)
-[![Static Analyze](https://github.com/silencenjoyer/api-sdk/actions/workflows/phpstan.yml/badge.svg)](https://github.com/silencenjoyer/api-sdk/actions/workflows/phpunit.yml)
+[![Static Analyze](https://github.com/silencenjoyer/api-sdk/actions/workflows/phpstan.yml/badge.svg)](https://github.com/silencenjoyer/api-sdk/actions/workflows/phpstan.yml)
 [![Latest Stable Version](https://img.shields.io/packagist/v/silencenjoyer/api-sdk.svg)](https://packagist.org/packages/silencenjoyer/api-sdk)
 [![PHP Version Require](https://img.shields.io/packagist/php-v/silencenjoyer/api-sdk.svg)](https://packagist.org/packages/silencenjoyer/api-sdk)
 [![License](https://img.shields.io/github/license/silencenjoyer/api-sdk)](LICENSE)
