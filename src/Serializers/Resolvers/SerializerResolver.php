@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Silencenjoyer\ApiSdk\Serializers\Resolvers;
 
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;
 use Silencenjoyer\ApiSdk\ContentType\AbstractContentTypeResolver;
 use Silencenjoyer\ApiSdk\ContentType\ContentTypeDto;
@@ -39,7 +40,7 @@ final class SerializerResolver extends AbstractContentTypeResolver implements Se
         return $this->resolveFromMapper($request, $contentTypeDto);
     }
 
-    protected function throwNotResolved(string $reason): void
+    protected function throwNotResolved(MessageInterface $message, string $reason): void
     {
         throw new UnableToResolveSerializerException('Unable to resolve serializer: ' . $reason);
     }

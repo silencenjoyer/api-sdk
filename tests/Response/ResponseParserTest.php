@@ -55,13 +55,13 @@ final class ResponseParserTest extends TestCase
         $parsed = (new ResponseParser($this->makeParserResolver()))
             ->parse($response, new ContentTypeDto(Format::JSON));
 
-        $this->assertSame($response, $parsed->getOriginalResponse());
+        $this->assertSame($response, $parsed->getHttpResponse());
     }
 
     public function testThrowsWhenParserCannotBeResolved(): void
     {
         $parserResolver = $this->createMock(ParserResolverInterface::class);
-        $parserResolver->method('resolve')->willThrowException(new UnableToResolveParserException('no parser'));
+        $parserResolver->method('resolve')->willThrowException(new UnableToResolveParserException(null, 'no parser'));
 
         $this->expectException(UnableToResolveParserException::class);
         (new ResponseParser($parserResolver))->parse((new Psr17Factory())->createResponse(), null);

@@ -21,6 +21,6 @@ final class ParsedResponseTest extends TestCase
         $this->assertIsObject($obj);
         $this->assertSame(1, $obj->a);
         $this->assertIsArray($parsed->asArray()['b']);
-        $this->assertSame($response, $parsed->getOriginalResponse());
+        $this->assertSame($response, $parsed->getHttpResponse());
     }
 }

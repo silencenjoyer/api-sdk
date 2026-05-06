@@ -17,8 +17,12 @@ use Psr\Http\Message\ResponseInterface;
 
 class HttpResponseException extends ApiException
 {
-    public function __construct(private ResponseInterface $response, string $message = '')
+    private ResponseInterface $response;
+
+    public function __construct(ResponseInterface $response, string $message = '')
     {
+        $this->response = $response;
+
         parent::__construct($message ?: 'HTTP error: ' . $response->getStatusCode());
     }
 

@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Silencenjoyer\ApiSdk\Parsers\Resolvers;
 
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Silencenjoyer\ApiSdk\ContentType\AbstractContentTypeResolver;
 use Silencenjoyer\ApiSdk\ContentType\ContentTypeDto;
@@ -39,8 +40,9 @@ final class ParserResolver extends AbstractContentTypeResolver implements Parser
         return $this->resolveFromMapper($response, $contentTypeDto);
     }
 
-    protected function throwNotResolved(string $reason): void
+    protected function throwNotResolved(MessageInterface $message, string $reason): void
     {
-        throw new UnableToResolveParserException('Unable to resolve parser: ' . $reason);
+        $response = $message instanceof ResponseInterface ? $message : null;
+        throw new UnableToResolveParserException($response, 'Unable to resolve parser: ' . $reason);
     }
 }

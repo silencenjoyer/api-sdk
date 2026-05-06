@@ -22,5 +22,5 @@ interface ParsedResponseInterface
 
     public function asObject(): stdClass;
 
-    public function getOriginalResponse(): ResponseInterface;
+    public function getHttpResponse(): ResponseInterface;
 }
