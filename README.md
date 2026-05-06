@@ -331,6 +331,7 @@ NbuApi::getBuilder()
 | `LoggerMiddleware` | Logs request and response bodies via PSR-3 |
 | `RepeatableMiddleware` | Retries requests on 5xx by default; configurable condition and retry count |
 | `RateLimiterMiddleware` | Throttles outgoing requests via `silencenjoyer/rate-limiter`; blocks until the rate window allows |
+| `ThrowOnErrorStatusMiddleware` | Throws `ClientHttpException` on 4xx and `ServerHttpException` on 5xx; opt-in |
 | `Bearer` | Adds `Authorization: Bearer <token>` header |
 | `JsonParser` | Parses JSON responses |
 | `JsonSerializer` | Serializes request bodies as JSON |
