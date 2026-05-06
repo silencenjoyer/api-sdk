@@ -30,7 +30,7 @@ abstract class AbstractContentTypeResolver
     /**
      * @return never
      */
-    abstract protected function throwNotResolved(MessageInterface $message, string $reason): void;
+    abstract protected function throwNotResolved(string $reason): void;
 
     /**
      * @param array<string, THandler> $contentTypeMapper
@@ -51,11 +51,11 @@ abstract class AbstractContentTypeResolver
         $dto = $hint ?? $this->contentTypeReader->readValue($message);
 
         if ($dto === null) {
-            $this->throwNotResolved($message, 'content type is not defined');
+            $this->throwNotResolved('content type is not defined');
         }
 
         if (!isset($this->contentTypeMapper[$dto->contentType])) {
-            $this->throwNotResolved($message, 'content type: ' . $dto->contentType);
+            $this->throwNotResolved('content type: ' . $dto->contentType);
         }
 
         return $this->contentTypeMapper[$dto->contentType];

@@ -18,7 +18,8 @@ use Psr\Http\Message\ResponseInterface;
 class UnableToResolveParserException extends ApiException
 {
     private ?ResponseInterface $response;
-    public function __construct(?ResponseInterface $response = null, string $message = 'Unable to resolve parser.')
+
+    public function __construct(string $message = 'Unable to resolve parser.', ?ResponseInterface $response = null)
     {
         $this->response = $response;
 
