@@ -37,7 +37,7 @@ final class ParsedResponse implements ParsedResponseInterface
         return (object) $this->body;
     }
 
-    public function getOriginalResponse(): ResponseInterface
+    public function getHttpResponse(): ResponseInterface
     {
         return $this->response;
     }

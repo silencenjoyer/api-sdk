@@ -99,7 +99,7 @@ $response = $command->send();
 ```php
 $response->asArray();           // array
 $response->asObject();          // stdClass
-$response->getOriginalResponse(); // PSR-7 ResponseInterface
+$response->getHttpResponse(); // PSR-7 ResponseInterface
 ```
 
 ---

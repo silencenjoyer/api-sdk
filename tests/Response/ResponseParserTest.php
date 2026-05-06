@@ -55,7 +55,7 @@ final class ResponseParserTest extends TestCase
         $parsed = (new ResponseParser($this->makeParserResolver()))
             ->parse($response, new ContentTypeDto(Format::JSON));
 
-        $this->assertSame($response, $parsed->getOriginalResponse());
+        $this->assertSame($response, $parsed->getHttpResponse());
     }
 
     public function testThrowsWhenParserCannotBeResolved(): void

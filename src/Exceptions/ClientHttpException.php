@@ -11,16 +11,8 @@
 
 declare(strict_types=1);
 
-namespace Silencenjoyer\ApiSdk\Response;
+namespace Silencenjoyer\ApiSdk\Exceptions;
 
-use Psr\Http\Message\ResponseInterface;
-use stdClass;
-
-interface ParsedResponseInterface
+class ClientHttpException extends HttpResponseException
 {
-    public function asArray(): array;
-
-    public function asObject(): stdClass;
-
-    public function getHttpResponse(): ResponseInterface;
 }

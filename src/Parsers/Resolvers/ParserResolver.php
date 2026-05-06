@@ -36,7 +36,11 @@ final class ParserResolver extends AbstractContentTypeResolver implements Parser
      */
     public function resolve(ResponseInterface $response, ?ContentTypeDto $contentTypeDto = null): ParserInterface
     {
-        return $this->resolveFromMapper($response, $contentTypeDto);
+        try {
+            return $this->resolveFromMapper($response, $contentTypeDto);
+        } catch (UnableToResolveParserException $e) {
+            throw new UnableToResolveParserException($e->getMessage(), $response);
+        }
     }
 
     protected function throwNotResolved(string $reason): void

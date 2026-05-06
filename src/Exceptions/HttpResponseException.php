@@ -15,19 +15,24 @@ namespace Silencenjoyer\ApiSdk\Exceptions;
 
 use Psr\Http\Message\ResponseInterface;
 
-class UnableToResolveParserException extends ApiException
+class HttpResponseException extends ApiException
 {
-    private ?ResponseInterface $response;
+    private ResponseInterface $response;
 
-    public function __construct(string $message = 'Unable to resolve parser.', ?ResponseInterface $response = null)
+    public function __construct(ResponseInterface $response, string $message = '')
     {
         $this->response = $response;
 
-        parent::__construct($message);
+        parent::__construct($message ?: 'HTTP error: ' . $response->getStatusCode());
     }
 
-    public function getResponse(): ?ResponseInterface
+    public function getResponse(): ResponseInterface
     {
         return $this->response;
+    }
+
+    public function getStatusCode(): int
+    {
+        return $this->response->getStatusCode();
     }
 }
